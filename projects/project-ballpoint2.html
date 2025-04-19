@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile App - Bettina C. Ligero</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/project-detail.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="dark-mode">
+    <div class="container">
+      <header>
+        <div class="logo">
+          <button class="theme-toggle" aria-label="Toggle dark/light mode">
+            <svg
+              class="lightbulb"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="about.html">About me</a></li>
+            <li><a href="portfolio.html" class="active">Portfolio</a></li>
+            <li><a href="contact.html">Contact me</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <section class="project-detail-section">
+          <a href="portfolio.html" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+          </a>
+
+          <div class="project-header">
+            <h1 class="project-title">Ballpoint</h1>
+            <p class="project-category">Mobile App</p>
+          </div>
+
+          <div class="project-content">
+            <div class="project-description">
+              <p>
+                Ballpoint is an AI-enhanced note-taking application developed as
+                a team project for our Software Engineering class. The app aims
+                to streamline the learning process by automating note extraction
+                from images and audio, organizing content intelligently, and
+                offering tools for querying, autocomplete, advanced searching,
+                and summarization. It is designed to improve the efficiency of
+                studying, allowing users to focus more on understanding and less
+                on manual note-taking.
+              </p>
+              <p>
+                As one of the frontend developers, I worked on implementing the
+                UI using React Native. I translated our design prototypes into
+                responsive, functional components and handled user interactions
+                for key features such as note creation and category management.
+                I also managed state and API integration with our Django
+                backend, ensuring smooth data flow and responsiveness. My focus
+                was on maintaining a consistent user experience, minimizing
+                latency, and handling errors gracefully to support a reliable
+                and polished frontend.
+              </p>
+            </div>
+
+            <div class="project-images">
+              <img
+                src="assets/Ballpoint.png"
+                alt="Ballpoint Screens"
+                class="main-image"
+              />
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="theme-toggle.js"></script>
+  </body>
+</html>

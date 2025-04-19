@@ -1,0 +1,167 @@
+/* Skills Section Styles */
+.skills-section {
+  padding: 2rem 0 4rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s,
+    background-color var(--transition-speed);
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.skill-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.skill-icon-container {
+  background-color: rgba(138, 86, 232, 0.1);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease, background-color var(--transition-speed);
+  position: relative;
+  z-index: 2;
+}
+
+.skill-icon-container:hover,
+.skill-icon-container:focus {
+  background-color: rgba(138, 86, 232, 0.3);
+  transform: scale(1.1);
+  outline: none;
+}
+
+.skill-icon-container:active {
+  transform: scale(0.95);
+}
+
+.skill-icon {
+  font-size: 1.5rem;
+  color: var(--highlight-color);
+}
+
+.skill-title {
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  transition: transform 0.3s;
+  display: inline-block;
+}
+
+.skill-description {
+  color: var(--text-color);
+  opacity: 0.7;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s, height 0.3s, color var(--transition-speed);
+  margin-top: 0;
+}
+
+/* Active state for skill cards */
+.skill-card.active {
+  background-color: var(--card-bg-hover);
+  box-shadow: 0 5px 15px var(--shadow-color);
+  justify-content: flex-start;
+}
+
+.skill-card.active .skill-content {
+  transform: translateY(-10px);
+}
+
+.skill-card.active .skill-description {
+  opacity: 1;
+  height: auto;
+  margin-top: 1rem;
+}
+
+/* Animation for skill cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skill-card {
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+}
+
+.skill-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.skill-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.skill-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.skill-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.skill-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.skill-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-card {
+    height: auto;
+    min-height: 220px;
+  }
+}

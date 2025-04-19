@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact me - Bettina C. Ligero</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="dark-mode">
+    <div class="container">
+      <header>
+        <div class="logo">
+          <button class="theme-toggle" aria-label="Toggle dark/light mode">
+            <svg
+              class="lightbulb"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="about.html">About me</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html" class="active">Contact me</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <section class="contact-section">
+          <h2 class="section-title">Contact me</h2>
+          <p class="section-subtitle">
+            Cultivating Connections: Reach Out And Connect With Me
+          </p>
+
+          <form
+            class="contact-form"
+            action="https://formsubmit.co/ligerobc24@gmail.com"
+            method="POST"
+          >
+            <div class="form-grid">
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Name"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="Phone Number"
+                />
+              </div>
+
+              <div class="form-group">
+                <select id="service" name="service" required>
+                  <option value="" disabled selected>
+                    Service Of Interest
+                  </option>
+                  <option value="web-design">Web Design</option>
+                  <option value="mobile-app">Mobile App Development</option>
+                  <option value="ui-ux">UI/UX Design</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="timeline"
+                  name="timeline"
+                  placeholder="Timeline"
+                />
+              </div>
+
+              <div class="form-group full-width">
+                <textarea
+                  id="details"
+                  name="details"
+                  placeholder="Project Details..."
+                  rows="5"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="form-submit">
+              <button type="submit" class="submit-btn">Send</button>
+            </div>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <script src="theme-toggle.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector(".contact-form");
+
+        form.addEventListener("submit", function (e) {
+          // Basic form validation
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const service = document.getElementById("service").value;
+
+          if (!name || !email || !service) {
+            e.preventDefault();
+            alert("Please fill out all required fields.");
+            return;
+          }
+
+          // Email validation
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(email)) {
+            e.preventDefault();
+            alert("Please enter a valid email address.");
+            return;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

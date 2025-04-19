@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Portfolio - Bettina C. Ligero</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">
+          <!-- Simple toggle with minimal inline JS -->
+          <button class="theme-toggle" aria-label="Toggle dark/light mode">
+            <svg
+              class="lightbulb"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="about.html">About me</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact me</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <div class="hero-content">
+          <div class="hero-text fade-in">
+            <p class="greeting">Hi I am</p>
+            <h1>Bettina C. Ligero</h1>
+            <p class="subtitle">an aspiring</p>
+            <h2 class="highlight">
+              Front-End Developer & <br />UI/UX designer
+            </h2>
+            <p class="tagline">
+              Designing clean interfaces, coding smooth experiences.
+            </p>
+
+            <div class="social-icons">
+              <a
+                href="https://www.instagram.com/bttnlight/"
+                aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/bettinaligero24/"
+                aria-label="LinkedIn"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="mailto:ligerobc24@gmail.com" aria-label="Email"
+                ><i class="fas fa-envelope"></i
+              ></a>
+            </div>
+          </div>
+          <div class="hero-image fade-in-delayed">
+            <div class="image-container">
+              <img src="assets/portrait (2).png" alt="Bettina C. Ligero" />
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="theme-toggle.js"></script>
+  </body>
+</html>

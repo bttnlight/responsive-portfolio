@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Bettina C. Ligero</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/portfolio.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="dark-mode">
+    <div class="container">
+      <header>
+        <div class="logo">
+          <button class="theme-toggle" aria-label="Toggle dark/light mode">
+            <svg
+              class="lightbulb"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="about.html">About me</a></li>
+            <li><a href="portfolio.html" class="active">Portfolio</a></li>
+            <li><a href="contact.html">Contact me</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <section class="portfolio-section">
+          <h2 class="section-title">Portfolio</h2>
+
+          <div class="portfolio-filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="website-design">
+              Website Design
+            </button>
+            <button class="filter-btn" data-filter="mobile-app-design">
+              Mobile App Design
+            </button>
+            <button class="filter-btn" data-filter="mobile-app">
+              Mobile App
+            </button>
+            <button class="filter-btn" data-filter="website">Website</button>
+          </div>
+
+          <div class="portfolio-grid">
+            <!-- Project 1 -->
+            <a
+              href="projects/project-ballpoint1.html"
+              class="project-card"
+              data-category="mobile-app-design"
+            >
+              <div class="project-image">
+                <img src="assets/BallpointLogo.png" alt="Ballpoint Project" />
+              </div>
+              <div class="project-info">
+                <h3 class="project-title">Ballpoint</h3>
+                <p class="project-category">Mobile App Design</p>
+              </div>
+            </a>
+
+            <!-- Project 2 -->
+            <a
+              href="projects/project-ballpoint2.html"
+              class="project-card"
+              data-category="mobile-app"
+            >
+              <div class="project-image">
+                <img src="assets/BallpointLogo.png" alt="Ballpoint Website" />
+              </div>
+              <div class="project-info">
+                <h3 class="project-title">Ballpoint</h3>
+                <p class="project-category">Mobile App</p>
+              </div>
+            </a>
+
+            <!-- Project 3 -->
+            <a
+              href="projects/project-doorm1.html"
+              class="project-card"
+              data-category="website-design"
+            >
+              <div class="project-image">
+                <img src="assets/DoormLogo.png" alt="Doorm Website" />
+              </div>
+              <div class="project-info">
+                <h3 class="project-title">Doorm</h3>
+                <p class="project-category">Website Design</p>
+              </div>
+            </a>
+
+            <!-- Project 4 -->
+            <a
+              href="projects/project-doorm2.html"
+              class="project-card"
+              data-category="website"
+            >
+              <div class="project-image">
+                <img src="assets/DoormLogo.png" alt="Doorm Website" />
+              </div>
+              <div class="project-info">
+                <h3 class="project-title">Doorm</h3>
+                <p class="project-category">Website</p>
+              </div>
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="theme-toggle.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const filterBtns = document.querySelectorAll(".filter-btn");
+        const projectCards = document.querySelectorAll(".project-card");
+
+        // Filter projects based on category
+        filterBtns.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            // Remove active class from all buttons
+            filterBtns.forEach((b) => b.classList.remove("active"));
+
+            // Add active class to clicked button
+            this.classList.add("active");
+
+            const filter = this.getAttribute("data-filter");
+
+            // Show/hide projects based on filter
+            projectCards.forEach((card) => {
+              if (
+                filter === "all" ||
+                card.getAttribute("data-category") === filter
+              ) {
+                card.style.display = "block";
+                setTimeout(() => {
+                  card.classList.add("show");
+                }, 10);
+              } else {
+                card.classList.remove("show");
+                setTimeout(() => {
+                  card.style.display = "none";
+                }, 300);
+              }
+            });
+          });
+        });
+
+        // Initialize with all projects visible
+        projectCards.forEach((card) => {
+          card.classList.add("show");
+        });
+      });
+    </script>
+  </body>
+</html>
