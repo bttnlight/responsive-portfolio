@@ -122,6 +122,12 @@
               </div>
             </div>
 
+            <input type="hidden" name="_captcha" value="true" />
+            <div
+              class="g-recaptcha"
+              data-sitekey="6LfQih8rAAAAAI8YdPeSzDcDzRsJKaeOVjivefjd"
+            ></div>
+
             <div class="form-submit">
               <button type="submit" class="submit-btn">Send</button>
             </div>
@@ -131,12 +137,13 @@
     </div>
 
     <script src="theme-toggle.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const form = document.querySelector(".contact-form");
 
         form.addEventListener("submit", function (e) {
-          // Basic form validation
           const name = document.getElementById("name").value;
           const email = document.getElementById("email").value;
           const service = document.getElementById("service").value;
@@ -147,11 +154,17 @@
             return;
           }
 
-          // Email validation
           const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
           if (!emailRegex.test(email)) {
             e.preventDefault();
             alert("Please enter a valid email address.");
+            return;
+          }
+
+          // reCAPTCHA check
+          if (grecaptcha.getResponse() === "") {
+            e.preventDefault();
+            alert("Please complete the CAPTCHA.");
             return;
           }
         });
