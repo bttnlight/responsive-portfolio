@@ -95,6 +95,30 @@
   margin-top: 0;
 }
 
+/* Add this to your existing skills.css file */
+.language-icon {
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+/* Ensure the dark mode styling works with our new icons */
+.dark-mode .language-icon {
+  background: linear-gradient(135deg, #8ca6ff, #c49bff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* Active state for skill cards */
 .skill-card.active {
   background-color: var(--card-bg-hover);
