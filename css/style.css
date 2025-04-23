@@ -27,7 +27,12 @@ body:not(.dark-mode) {
   /* Gradient variables - Light theme */
   --gradient-primary: linear-gradient(135deg, #8a56e8 0%, #c77dff 100%);
   --gradient-secondary: linear-gradient(135deg, #7645d8 0%, #a67ff0 100%);
-  --gradient-accent: linear-gradient(90deg, #8a56e8 0%, #5e17eb 50%, #8a56e8 100%);
+  --gradient-accent: linear-gradient(
+    90deg,
+    #8a56e8 0%,
+    #5e17eb 50%,
+    #8a56e8 100%
+  );
 }
 
 .dark-mode {
@@ -46,7 +51,12 @@ body:not(.dark-mode) {
   /* Gradient variables - Dark theme */
   --gradient-primary: linear-gradient(135deg, #a67ff0 0%, #d8a4ff 100%);
   --gradient-secondary: linear-gradient(135deg, #8a56e8 0%, #b28aff 100%);
-  --gradient-accent: linear-gradient(90deg, #a67ff0 0%, #7d3cf8 50%, #a67ff0 100%);
+  --gradient-accent: linear-gradient(
+    90deg,
+    #a67ff0 0%,
+    #7d3cf8 50%,
+    #a67ff0 100%
+  );
 }
 
 * {
@@ -59,7 +69,8 @@ body:not(.dark-mode) {
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
-  transition: background-color var(--transition-speed), color var(--transition-speed);
+  transition: background-color var(--transition-speed),
+    color var(--transition-speed);
   min-height: 100vh;
 }
 
@@ -342,5 +353,158 @@ h1 {
   .image-container {
     width: 250px;
     height: 250px;
+  }
+}
+
+/* Skill orbit system */
+.profile-with-skills {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 2;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.skill-icon {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 1;
+
+  /* Calculate position based on --i variable */
+  --angle: calc(var(--i) * (360deg / 14));
+  --radius: 200px;
+
+  /* Position at calculated angle and distance */
+  top: calc(50% - 25px);
+  left: calc(50% - 25px);
+  transform-origin: calc(var(--radius) / 2) center;
+  animation: orbit 40s linear infinite;
+  animation-delay: calc(var(--i) * -2.85s); /* Stagger the animations */
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(var(--radius)) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(var(--radius)) rotate(-360deg);
+  }
+}
+
+.skill-icon:hover {
+  transform: scale(1.2);
+  z-index: 10;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  animation-play-state: paused;
+}
+
+.skill-tooltip {
+  position: absolute;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  bottom: -30px;
+}
+
+.skill-icon:hover .skill-tooltip {
+  opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .profile-with-skills {
+    width: 350px;
+    height: 350px;
+  }
+
+  .image-container {
+    width: 250px;
+    height: 250px;
+  }
+
+  .skill-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+    --radius: 175px;
+    top: calc(50% - 22.5px);
+    left: calc(50% - 22.5px);
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-with-skills {
+    width: 300px;
+    height: 300px;
+  }
+
+  .image-container {
+    width: 200px;
+    height: 200px;
+  }
+
+  .skill-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    --radius: 150px;
+    top: calc(50% - 20px);
+    left: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-with-skills {
+    width: 250px;
+    height: 250px;
+  }
+
+  .image-container {
+    width: 150px;
+    height: 150px;
+  }
+
+  .skill-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+    --radius: 120px;
+    top: calc(50% - 17.5px);
+    left: calc(50% - 17.5px);
   }
 }

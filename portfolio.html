@@ -41,7 +41,6 @@
         <nav>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="skills.html">Skills</a></li>
             <li><a href="about.html">About me</a></li>
             <li><a href="portfolio.html" class="active">Portfolio</a></li>
             <li><a href="contact.html">Contact me</a></li>
@@ -55,76 +54,113 @@
 
           <div class="portfolio-filter">
             <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="website-design">
-              Website Design
+            <button class="filter-btn" data-filter="web-application">
+              Web Application
             </button>
-            <button class="filter-btn" data-filter="mobile-app-design">
-              Mobile App Design
+            <button class="filter-btn" data-filter="mobile-application">
+              Mobile Application
             </button>
-            <button class="filter-btn" data-filter="mobile-app">
-              Mobile App
+            <button class="filter-btn" data-filter="game-development">
+              Game Development
             </button>
-            <button class="filter-btn" data-filter="website">Website</button>
           </div>
 
           <div class="portfolio-grid">
             <!-- Project 1 -->
             <a
-              href="projects/project-ballpoint1.html"
+              href="projects/project-ballpoint.html"
               class="project-card"
-              data-category="mobile-app-design"
+              data-category="mobile-application"
             >
               <div class="project-image">
                 <img src="assets/BallpointLogo.png" alt="Ballpoint Project" />
               </div>
               <div class="project-info">
                 <h3 class="project-title">Ballpoint</h3>
-                <p class="project-category">Mobile App Design</p>
+                <p class="project-category">Mobile Application</p>
               </div>
             </a>
 
             <!-- Project 2 -->
             <a
-              href="projects/project-ballpoint2.html"
+              href="projects/project-doorm.html"
               class="project-card"
-              data-category="mobile-app"
+              data-category="web-application"
             >
               <div class="project-image">
-                <img src="assets/BallpointLogo.png" alt="Ballpoint Website" />
+                <img src="assets/DoormLogo.png" alt="Doorm Project" />
               </div>
               <div class="project-info">
-                <h3 class="project-title">Ballpoint</h3>
-                <p class="project-category">Mobile App</p>
+                <h3 class="project-title">Doorm</h3>
+                <p class="project-category">Web Application</p>
               </div>
             </a>
 
             <!-- Project 3 -->
             <a
-              href="projects/project-doorm1.html"
+              href="projects/project-upokemon.html"
               class="project-card"
-              data-category="website-design"
+              data-category="game-development"
             >
               <div class="project-image">
-                <img src="assets/DoormLogo.png" alt="Doorm Website" />
+                <img src="assets/UPokemonLogo.png" alt="UPokemon Project" />
               </div>
               <div class="project-info">
-                <h3 class="project-title">Doorm</h3>
-                <p class="project-category">Website Design</p>
+                <h3 class="project-title">UPokemon</h3>
+                <p class="project-category">Game Development</p>
               </div>
             </a>
 
             <!-- Project 4 -->
             <a
-              href="projects/project-doorm2.html"
+              href="projects/project-raindeluca.html"
               class="project-card"
-              data-category="website"
+              data-category="game-development"
             >
               <div class="project-image">
-                <img src="assets/DoormLogo.png" alt="Doorm Website" />
+                <img
+                  src="assets/RainDeLucaLogo.png"
+                  alt="Rain De Luca: In Action! Project"
+                />
               </div>
               <div class="project-info">
-                <h3 class="project-title">Doorm</h3>
-                <p class="project-category">Website</p>
+                <h3 class="project-title">Rain De Luca: In Action!</h3>
+                <p class="project-category">Game Development</p>
+              </div>
+            </a>
+
+            <!-- Project 5 -->
+            <a
+              href="projects/project-papertownsman.html"
+              class="project-card"
+              data-category="game-development"
+            >
+              <div class="project-image">
+                <img
+                  src="assets/PaperTownsmanLogo.png"
+                  alt="Paper Townsman Project"
+                />
+              </div>
+              <div class="project-info">
+                <h3 class="project-title">Paper Townsman</h3>
+                <p class="project-category">Game Development</p>
+              </div>
+            </a>
+
+            <!-- Project 6 -->
+            <a
+              href="projects/project-99thecardduel.html"
+              class="project-card"
+              data-category="game-development, web-application"
+            >
+              <div class="project-image">
+                <img src="assets/99Logo.png" alt="99: The Card Duel Project" />
+              </div>
+              <div class="project-info">
+                <h3 class="project-title">99: The Card Duel</h3>
+                <p class="project-category">
+                  Game Development, Web Application
+                </p>
               </div>
             </a>
           </div>
@@ -139,23 +175,20 @@
         const filterBtns = document.querySelectorAll(".filter-btn");
         const projectCards = document.querySelectorAll(".project-card");
 
-        // Filter projects based on category
         filterBtns.forEach((btn) => {
           btn.addEventListener("click", function () {
-            // Remove active class from all buttons
             filterBtns.forEach((b) => b.classList.remove("active"));
-
-            // Add active class to clicked button
             this.classList.add("active");
 
             const filter = this.getAttribute("data-filter");
 
-            // Show/hide projects based on filter
             projectCards.forEach((card) => {
-              if (
-                filter === "all" ||
-                card.getAttribute("data-category") === filter
-              ) {
+              const categories = card
+                .getAttribute("data-category")
+                .split(",")
+                .map((cat) => cat.trim());
+
+              if (filter === "all" || categories.includes(filter)) {
                 card.style.display = "block";
                 setTimeout(() => {
                   card.classList.add("show");
@@ -170,7 +203,6 @@
           });
         });
 
-        // Initialize with all projects visible
         projectCards.forEach((card) => {
           card.classList.add("show");
         });

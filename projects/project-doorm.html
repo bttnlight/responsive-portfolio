@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Doorm Website - Bettina C. Ligero</title>
+    <title>Doorm - Web Application</title>
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/project-detail.css" />
     <link
@@ -41,7 +41,6 @@
         <nav>
           <ul>
             <li><a href="../index.html">Home</a></li>
-            <li><a href="../skills.html">Skills</a></li>
             <li><a href="../about.html">About me</a></li>
             <li><a href="../portfolio.html" class="active">Portfolio</a></li>
             <li><a href="../contact.html">Contact me</a></li>
@@ -57,7 +56,13 @@
 
           <div class="project-header">
             <h1 class="project-title">Doorm</h1>
-            <p class="project-category">Website</p>
+            <p class="project-category">Web Application</p>
+            <div class="project-links">
+              <a href="https://github.com/Loweso/doorm" class="github-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i>
+                <span>View on GitHub</span>
+              </a>
+            </div>
           </div>
 
           <div class="project-content">
@@ -72,23 +77,13 @@
                 profile management, focusing on user convenience and data-driven
                 functionality.
               </p>
-              <p>
-                On the frontend, I built the user interface using React and
-                styled it with Tailwind CSS. I translated our design prototypes
-                into interactive, responsive components, handling core
-                functionalities such as listing displays, form submissions,
-                filtering, and navigation. I ensured consistent styling, clean
-                component structure, and smooth user interactions to deliver a
-                polished and responsive web experience.
-              </p>
-              <p>
-                Although backend development was primarily handled by other
-                teammates, I contributed to some backend tasks using Django,
-                particularly involving basic CRUD operations and database model
-                integration. I also assisted in ensuring proper data flow
-                between the frontend and backend through API integration and
-                testing.
-              </p>
+            </div>
+
+            <div class="tech-stack">
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">Next.js</span>
+              <span class="tech-tag">ExpressJS</span>
+              <span class="tech-tag">MySQL</span>
             </div>
 
             <div class="project-images">
@@ -102,6 +97,6 @@
         </section>
       </main>
     </div>
-    <script src="theme-toggle.js"></script>
+    <script src="../theme-toggle.js"></script>
   </body>
 </html>

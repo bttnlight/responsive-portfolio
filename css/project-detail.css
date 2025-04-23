@@ -56,6 +56,36 @@
   transition: color var(--transition-speed);
 }
 
+/* GitHub Link Styles */
+.project-links {
+  margin-top: 1.2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--highlight-color);
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: rgba(var(--highlight-color-rgb), 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(var(--highlight-color-rgb), 0.2);
+}
+
+.github-link:hover {
+  background-color: rgba(var(--highlight-color-rgb), 0.2);
+  transform: translateY(-2px);
+}
+
+.github-link i {
+  font-size: 1.2rem;
+}
+
 .project-content {
   display: flex;
   flex-direction: column;
@@ -117,7 +147,8 @@
 
 .project-header,
 .project-description,
-.project-images {
+.project-images,
+.project-links {
   animation: fadeIn 0.8s ease-out forwards;
 }
 
@@ -131,6 +162,55 @@
   animation-fill-mode: forwards;
 }
 
+.project-links {
+  animation-delay: 0.3s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+/* Tech Stack Tags */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  animation: fadeIn 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.tech-tag {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: rgba(var(--highlight-color-rgb), 0.15);
+  color: var(--highlight-color);
+  border: 1px solid rgba(var(--highlight-color-rgb), 0.3);
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  transform: translateY(-2px);
+  background: rgba(var(--highlight-color-rgb), 0.25);
+  box-shadow: 0 2px 8px rgba(var(--highlight-color-rgb), 0.2);
+}
+
+/* Responsive adjustments for tech tags */
+@media (max-width: 480px) {
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+  }
+  
+  .tech-stack {
+    gap: 0.4rem;
+  }
+}
+
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .project-title {
@@ -139,6 +219,14 @@
 
   .back-link {
     font-size: 1.2rem;
+  }
+
+  .github-link span {
+    display: none;
+  }
+
+  .github-link {
+    padding: 0.5rem;
   }
 }
 
