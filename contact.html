@@ -169,7 +169,8 @@
                 }
 
                 // If all validations pass, proceed to send the form with emailjs
-                emailjs.sendForm("service_m6t2bxj", "template_33o9bsh", this)
+                emailjs
+                  .sendForm("service_m6t2bxj", "template_33o9bsh", this)
                   .then(
                     function (response) {
                       console.log("SUCCESS!", response.status, response.text);
