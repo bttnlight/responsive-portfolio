@@ -138,13 +138,38 @@
           </form>
 
           <script>
-            document
-              .getElementById("contact-form")
-              .addEventListener("submit", function (event) {
-                event.preventDefault();
+            document.addEventListener("DOMContentLoaded", function () {
+              const form = document.querySelector(".contact-form");
 
-                emailjs
-                  .sendForm("service_m6t2bxj", "template_33o9bsh", this)
+              form.addEventListener("submit", function (e) {
+                e.preventDefault(); // Prevent the form submission initially
+
+                const name = document.getElementById("name").value;
+                const email = document.getElementById("email").value;
+                const service = document.getElementById("service").value;
+                const recaptchaResponse = grecaptcha.getResponse();
+
+                // Validate the required fields
+                if (!name || !email || !service) {
+                  alert("Please fill out all required fields.");
+                  return;
+                }
+
+                // Validate the email format
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                  alert("Please enter a valid email address.");
+                  return;
+                }
+
+                // Validate CAPTCHA response
+                if (recaptchaResponse === "") {
+                  alert("Please complete the CAPTCHA.");
+                  return;
+                }
+
+                // If all validations pass, proceed to send the form with emailjs
+                emailjs.sendForm("service_m6t2bxj", "template_33o9bsh", this)
                   .then(
                     function (response) {
                       console.log("SUCCESS!", response.status, response.text);
@@ -156,6 +181,7 @@
                     }
                   );
               });
+            });
           </script>
         </section>
       </main>
@@ -163,37 +189,5 @@
 
     <script src="theme-toggle.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const form = document.querySelector(".contact-form");
-
-        form.addEventListener("submit", function (e) {
-          const name = document.getElementById("name").value;
-          const email = document.getElementById("email").value;
-          const service = document.getElementById("service").value;
-
-          if (!name || !email || !service) {
-            e.preventDefault();
-            alert("Please fill out all required fields.");
-            return;
-          }
-
-          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          if (!emailRegex.test(email)) {
-            e.preventDefault();
-            alert("Please enter a valid email address.");
-            return;
-          }
-
-          // reCAPTCHA check
-          if (grecaptcha.getResponse() === "") {
-            e.preventDefault();
-            alert("Please complete the CAPTCHA.");
-            return;
-          }
-        });
-      });
-    </script>
   </body>
 </html>
