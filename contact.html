@@ -54,12 +54,18 @@
           <p class="section-subtitle">
             Cultivating Connections: Reach Out And Connect With Me
           </p>
+          <!-- EmailJS SDK -->
+          <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+          ></script>
+          <script type="text/javascript">
+            (function () {
+              emailjs.init("L2CqtNB7NNUtBI3-s");
+            })();
+          </script>
 
-          <form
-            class="contact-form"
-            action="https://formsubmit.co/ligerobettina@gmail.com"
-            method="POST"
-          >
+          <form id="contact-form" class="contact-form">
             <div class="form-grid">
               <div class="form-group">
                 <input
@@ -121,7 +127,6 @@
               </div>
             </div>
 
-            <input type="hidden" name="_captcha" value="true" />
             <div
               class="g-recaptcha"
               data-sitekey="6LfQih8rAAAAAI8YdPeSzDcDzRsJKaeOVjivefjd"
@@ -131,6 +136,27 @@
               <button type="submit" class="submit-btn">Send</button>
             </div>
           </form>
+
+          <script>
+            document
+              .getElementById("contact-form")
+              .addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                emailjs
+                  .sendForm("service_m6t2bxj", "template_33o9bsh", this)
+                  .then(
+                    function (response) {
+                      console.log("SUCCESS!", response.status, response.text);
+                      alert("Your message has been sent successfully!");
+                    },
+                    function (error) {
+                      console.log("FAILED...", error);
+                      alert("There was a problem sending your message.");
+                    }
+                  );
+              });
+          </script>
         </section>
       </main>
     </div>
