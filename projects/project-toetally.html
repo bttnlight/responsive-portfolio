@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toetally - Web Application</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/project-detail.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="dark-mode">
+    <div class="container">
+      <header>
+        <div class="logo">
+          <button class="theme-toggle" aria-label="Toggle dark/light mode">
+            <svg
+              class="lightbulb"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About me</a></li>
+            <li><a href="../portfolio.html" class="active">Portfolio</a></li>
+            <li><a href="../contact.html">Contact me</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <section class="project-detail-section">
+          <a href="../portfolio.html" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+          </a>
+
+          <div class="project-header">
+            <h1 class="project-title">Toetally</h1>
+            <p class="project-category">Web Application</p>
+            <div class="project-links">
+              <a
+                href="https://github.com/arwin50/ftoetally"
+                class="github-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-github"></i>
+                <span>View on GitHub</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="project-content">
+            <div class="project-description">
+              <p>
+                Toetally is a personal finance tracking web application built
+                with Django, designed to help users manage their income and
+                expenses with ease and clarity. The application provides secure
+                user authentication, enabling individuals to register, log in,
+                and maintain their own private financial data. Utilizing
+                Django’s form handling and model capabilities, users can create,
+                read, update, and delete income and expense records. Each
+                financial entry includes a title, amount, date, type (income or
+                expense), and optional notes, with expenses further categorized
+                (e.g., Food, Travel, Bills) for detailed tracking.
+              </p>
+              <p>
+                The core of Toetally is its intuitive dashboard, which offers
+                users a clear monthly financial overview. This includes a
+                real-time summary of total income, total expenses, and remaining
+                balance, accompanied by interactive visualizations powered by
+                Chart.js. A pie chart displays expense distribution by category,
+                while a bar graph tracks income versus expenses over time. These
+                insights empower users to make informed financial decisions.
+                With a seamless UI for data entry and an emphasis on usability,
+                Toetally combines backend robustness with engaging frontend
+                visuals to deliver a complete personal budgeting experience.
+              </p>
+            </div>
+
+            <div class="tech-stack">
+              <span class="tech-tag">Typescript</span>
+              <span class="tech-tag">Next.js</span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="../theme-toggle.js"></script>
+  </body>
+</html>

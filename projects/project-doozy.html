@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doozy - Web Application</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/project-detail.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="dark-mode">
+    <div class="container">
+      <header>
+        <div class="logo">
+          <button class="theme-toggle" aria-label="Toggle dark/light mode">
+            <svg
+              class="lightbulb"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About me</a></li>
+            <li><a href="../portfolio.html" class="active">Portfolio</a></li>
+            <li><a href="../contact.html">Contact me</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <section class="project-detail-section">
+          <a href="../portfolio.html" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+          </a>
+
+          <div class="project-header">
+            <h1 class="project-title">Doozy</h1>
+            <p class="project-category">Web Application</p>
+            <div class="project-links">
+              <a
+                href="https://github.com/bttnlight/doozy"
+                class="github-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-github"></i>
+                <span>View on GitHub</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="project-content">
+            <div class="project-description">
+              <p>
+                Doozy is a streamlined to-do list application designed to
+                provide hands-on experience with the Quasar Framework and Axios
+                library, while demonstrating core front-end development
+                concepts. Built using the Quasar CLI, the app integrates
+                seamlessly with the JSONPlaceholder API to perform CRUD
+                operations. Users can add new tasks via a simple form featuring
+                an input field and submit button, and manage their tasks through
+                a responsive and interactive interface. Axios handles all HTTP
+                requests to the API, including retrieving existing tasks,
+                submitting new ones, editing task details, and deleting entries.
+              </p>
+              <p>
+                The primary goal of Doozy is to illustrate practical usage of
+                API integration and dynamic UI updates within a modern
+                Vue.js-based framework. As tasks are created, updated, or
+                deleted, the application reflects changes in real time,
+                enhancing the user experience. By combining the powerful
+                component structure of Quasar with Axios’s efficient
+                data-fetching capabilities, Doozy serves as a foundational
+                exercise for mastering front-end development workflows involving
+                API communication and reactive data handling.
+              </p>
+            </div>
+
+            <div class="tech-stack">
+              <span class="tech-tag">Vue</span>
+              <span class="tech-tag">Typescript</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">Javascript</span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="../theme-toggle.js"></script>
+  </body>
+</html>
